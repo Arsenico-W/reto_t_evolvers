@@ -1,1 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="I as user i want to use api booking" skipped="0" tests="10" time="7.27" timestamp="2023-03-15 03:11:15"><testcase name="create a booking"/><testcase name="create failed a booking"/><testcase name="create failed a booking without check"/><testcase name="search a booking"/><testcase name="search a booking don´t existing"/><testcase name="update a booking"/><testcase name="update bad a booking without token"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="I as user i want to use api booking" skipped="0" tests="10" time="7.41" timestamp="2023-03-17 09:41:46"><testcase name="create a booking"/><testcase name="create failed a booking"/><testcase name="create failed a booking without check"/><testcase name="search a booking"><failure message="&#10;Expected: &lt;200&gt;&#10;     but: was &lt;404&gt;" type="java.lang.AssertionError">
+Expected: &lt;200&gt;
+     but: was &lt;404&gt;</failure><system-err>
+Expected: &lt;200&gt;
+     but: was &lt;404&gt;&#13;
+tevolvers.stepdefinitions.bookingStepDefinitions.theUserSeeTheStatusCode(bookingStepDefinitions.java:41)&#13;
+✽.the user see the status code 200(src/test/resources/booking.feature:42)&#13;
+</system-err></testcase><testcase name="search a booking don´t existing"/><testcase name="update a booking"/><testcase name="update bad a booking without token"/></testsuite>

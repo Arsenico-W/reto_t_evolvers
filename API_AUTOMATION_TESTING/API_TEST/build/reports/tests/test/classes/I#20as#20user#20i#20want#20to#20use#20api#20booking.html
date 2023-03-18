@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">7.179s</div>
+<div class="counter">7.362s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">90%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,16 +61,37 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
 </li>
 <li>
-<a href="#tab2">Standard error</a>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="search a booking"></a>
+<h3 class="failures">search a booking</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;200&gt;
+     but: was &lt;404&gt;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:316)
+	at tevolvers.stepdefinitions.bookingStepDefinitions.theUserSeeTheStatusCode(bookingStepDefinitions.java:41)
+	at ✽.the user see the status code 200(src/test/resources/booking.feature:42)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -82,57 +103,57 @@
 </thead>
 <tr>
 <td class="success">create a booking</td>
-<td class="success">2.647s</td>
+<td class="success">2.896s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">create failed a booking</td>
-<td class="success">0.441s</td>
+<td class="success">0.453s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">create failed a booking</td>
-<td class="success">0.480s</td>
+<td class="success">0.400s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">create failed a booking without check</td>
-<td class="success">0.463s</td>
+<td class="success">0.455s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">search a booking</td>
-<td class="success">0.466s</td>
-<td class="success">passed</td>
+<td class="failures">search a booking</td>
+<td class="failures">0.500s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">search a booking</td>
-<td class="success">0.460s</td>
+<td class="success">0.452s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search a booking don´t existing</td>
-<td class="success">0.442s</td>
+<td class="success">0.434s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">search a booking don´t existing</td>
-<td class="success">0.446s</td>
+<td class="success">0.453s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">update a booking</td>
-<td class="success">0.918s</td>
+<td class="success">0.917s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">update bad a booking without token</td>
-<td class="success">0.416s</td>
+<td class="success">0.402s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>Request method:	POST
@@ -159,7 +180,7 @@ Body:
     &quot;additionalneeds&quot;: &quot;Breakfast&quot;
 }
 {
-    &quot;bookingid&quot;: 7624,
+    &quot;bookingid&quot;: 10479,
     &quot;booking&quot;: {
         &quot;firstname&quot;: &quot;Jim&quot;,
         &quot;lastname&quot;: &quot;Brown&quot;,
@@ -244,7 +265,7 @@ Body:
     &quot;additionalneeds&quot;: &quot;Breakfast&quot;
 }
 {
-    &quot;bookingid&quot;: 7649,
+    &quot;bookingid&quot;: 10535,
     &quot;booking&quot;: {
         &quot;firstname&quot;: &quot;Jim&quot;,
         &quot;lastname&quot;: &quot;Brown&quot;,
@@ -258,27 +279,17 @@ Body:
     }
 }
 {
-    &quot;firstname&quot;: &quot;James&quot;,
+    &quot;firstname&quot;: &quot;Jim&quot;,
     &quot;lastname&quot;: &quot;Brown&quot;,
     &quot;totalprice&quot;: 111,
     &quot;depositpaid&quot;: true,
     &quot;bookingdates&quot;: {
-        &quot;checkin&quot;: &quot;2018-01-01&quot;,
+        &quot;checkin&quot;: &quot;2019-01-01&quot;,
         &quot;checkout&quot;: &quot;2019-01-01&quot;
     },
     &quot;additionalneeds&quot;: &quot;Breakfast&quot;
 }
-{
-    &quot;firstname&quot;: &quot;Josh&quot;,
-    &quot;lastname&quot;: &quot;Allen&quot;,
-    &quot;totalprice&quot;: 111,
-    &quot;depositpaid&quot;: true,
-    &quot;bookingdates&quot;: {
-        &quot;checkin&quot;: &quot;2018-01-01&quot;,
-        &quot;checkout&quot;: &quot;2019-01-01&quot;
-    },
-    &quot;additionalneeds&quot;: &quot;super bowls&quot;
-}
+Not Found
 Not Found
 Not Found
 Request method:	POST
@@ -305,7 +316,7 @@ Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
 Headers:		Accept=application/json
-				Cookie=token=dec100f0f24c97a
+				Cookie=token=29e4a81d1c75b70
 				Content-Type=application/json; charset=UTF-8
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -360,7 +371,7 @@ Forbidden
 </pre>
 </span>
 </div>
-<div id="tab2" class="tab">
+<div id="tab3" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO  - 
@@ -413,16 +424,18 @@ create failed a booking without check
 
 search a booking
 ----------------------------------------------------------------------------
-[Test worker] INFO  - 
-        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
-  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
- (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
-  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
- (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
-        /_/                                                                
+[Test worker] ERROR  - 
+           __  _____ _____ ____ _____   _____ _    ___ _     _____ ____  
+  _       / / |_   _| ____/ ___|_   _| |  ___/ \  |_ _| |   | ____|  _ \ 
+ (_)_____| |    | | |  _| \___ \ | |   | |_ / _ \  | || |   |  _| | | | |
+  _|_____| |    | | | |___ ___) || |   |  _/ ___ \ | || |___| |___| |_| |
+ (_)     | |    |_| |_____|____/ |_|   |_|/_/   \_\___|_____|_____|____/ 
+          \_\                                                            
 
 search a booking
-----------------------------------------------------------------------------
+--------------------------------------------------------------------------
+[Test worker] ERROR  -     Test failed at step: Then status code should be (200)
+[Test worker] ERROR  -     Expected: &lt;200&gt; but: was &lt;404&gt;
 [Test worker] INFO  - 
         __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
   _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
@@ -474,7 +487,7 @@ update bad a booking without token
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at 15 mar 2023 15:11:23</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at 17 mar 2023 21:41:54</p>
 </div>
 </div>
 </body>
