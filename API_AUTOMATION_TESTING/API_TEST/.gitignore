@@ -1,4 +1,4 @@
 # ignorar paquete target y de reportes build
 
-target/
-build/
+target/site/serenity
+build
