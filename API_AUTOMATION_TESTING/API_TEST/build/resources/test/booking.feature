@@ -42,9 +42,9 @@ Feature: I as user i want to use api booking
     Then the user see the status code 200
     And the user see the information <additionalNeeds> in response
     Examples:
-      | id  | accept           | additionalNeeds |
-      | 1   | application/json | Breakfast       |
-      | 314 | application/json | super bowls     |
+      | id | accept           | additionalNeeds |
+      | 1  | application/json | Breakfast       |
+      | 23 | application/json | super bowls     |
 
 
   @GetBookingFailedCase
