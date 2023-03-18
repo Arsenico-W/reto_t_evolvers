@@ -1,0 +1,4 @@
+# ignorar paquete target y de reportes build
+
+.target
+.build
